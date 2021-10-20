@@ -1,0 +1,17 @@
+.messageListWrapper {
+  display: flex;
+  flex-direction: column;
+
+  justify-content: space-between;
+  align-items: flex-start;
+
+  > img {
+    height: 28px;
+    margin: 32px 0;
+  }
+
+  .messageList {
+    list-style: none;
+    display: flex;
+  }
+}
