@@ -1,20 +1,23 @@
 import styles from "./styles.module.scss"
 
-export const Message = () => {
+type Message = {
+  text: string
+  user: {
+    name: string
+    avatar_url: string
+  }
+}
+
+export const Message = ({ text, user }: Message) => {
+  const { avatar_url, name } = user
   return (
     <li className={styles.message}>
-      <p className={styles.messageContent}>
-        Não vejo a hora de começar esse evento, com certeza vai ser o melhor de
-        todos os tempos, vamooo pra cima! 🔥🔥
-      </p>
+      <p className={styles.messageContent}>{text}</p>
       <div className={styles.messageUser}>
         <div className={styles.userImage}>
-          <img
-            src="https://github.com/renanloureiroo.png"
-            alt="Renan Loureiro"
-          />
+          <img src={avatar_url} alt="Avatar do usuário" />
         </div>
-        <span>Renan Loureiro</span>
+        <span>{name}</span>
       </div>
     </li>
   )
